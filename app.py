@@ -23,7 +23,7 @@ with open(os.path.join(os.path.realpath(__file__), 'parameters.json'), 'r', enco
 
 
 logging.basicConfig(level=logging.INFO)
-bot = Bot(token='5386924491:AAGFC0Uan9Ix_LCHa_rTDkGZDyIvcrxf0MU')
+bot = Bot(token=os.getenv('TELEGRAM_BOT_TOKEN'))
 storage = MemoryStorage()
 dispatcher = Dispatcher(bot, storage=storage)
 registry = DialogRegistry(dispatcher)
