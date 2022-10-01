@@ -1,9 +1,8 @@
 #!/bin/bash
 
-cd /bin/saturit_bot
+cd /home/user/www/example.com/repository
 while true ; do
-      if [[ -f GITPULLMASTER ]] ; then
-            git pull
-      fi
-      sleep 10
+    git reset --hard HEAD
+    git pull
+    sleep 10
 done
