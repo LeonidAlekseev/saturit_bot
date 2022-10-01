@@ -1,3 +1,4 @@
+import os
 import json
 import logging
 from aiogram import Bot, Dispatcher, executor
@@ -9,9 +10,10 @@ from aiogram_dialog.widgets.kbd import Url, Button, Back, SwitchTo, Cancel, Row
 from aiogram_dialog.widgets.text import Const, Format
 from aiogram_dialog.widgets.input import MessageInput
 from aiogram import types
+import os
 
 
-with open('parameters.json', 'r', encoding='utf-8') as infile:
+with open(os.path.join(os.path.realpath(__file__), 'parameters.json'), 'r', encoding='utf-8') as infile:
     parameters = json.load(infile)
     QUESTIONS = parameters['QUESTIONS']
     ANSWERS = parameters['ANSWERS']
