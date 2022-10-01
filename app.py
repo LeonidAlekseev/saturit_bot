@@ -13,7 +13,7 @@ from aiogram import types
 import os
 
 
-with open(os.path.join(os.path.realpath(__file__), 'parameters.json'), 'r', encoding='utf-8') as infile:
+with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'parameters.json'), 'r', encoding='utf-8') as infile:
     parameters = json.load(infile)
     QUESTIONS = parameters['QUESTIONS']
     ANSWERS = parameters['ANSWERS']
