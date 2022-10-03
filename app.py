@@ -48,7 +48,7 @@ class AppSG(StatesGroup):
 @dispatcher.message_handler(commands=["start"])
 async def start(message: Message, dialog_manager: DialogManager):
     with open('images/description.jpeg', 'rb') as img:
-        await message.answer_photo(img, caption='Вас приветсвует лучшая буровая компания «САТУРИТ». Бурим более 18 лет. Более 2000 скважин в Московской области.\n\nПробурим для вас быстро, качественно, с гарантией. Звоните +79037258536, наверняка мы уже бурили рядом с вами!\n\nДля ознакомления с функционалом Telegram-бота нажмите /menu или выберите данную комаду в левом нижнем меню.')
+        await message.answer_photo(img, caption='Вас приветсвует буровая компания «САТУРИТ». Бурим более 18 лет. Более 2000 скважин в Московской области.\n\nПробурим для вас быстро, качественно, с гарантией. Звоните +79037258536, наверняка мы уже бурили рядом с вами!\n\nДля ознакомления с функционалом Telegram-бота нажмите /menu или выберите данную комаду в левом нижнем меню.')
 
 @dispatcher.message_handler(commands=["menu"])
 async def menu(message: Message, dialog_manager: DialogManager):
