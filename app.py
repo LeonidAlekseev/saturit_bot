@@ -48,7 +48,7 @@ class AppSG(StatesGroup):
 @dispatcher.message_handler(commands=["start"])
 async def start(message: Message, dialog_manager: DialogManager):
     with open('images/description.jpeg', 'rb') as img:
-        await message.answer_photo(img, caption='Вас приветсвует буровая компания «САТУРИТ». Бурим 18 лет. Более 2000 скважин в Московской области.\n\nПробурим для вас быстро, качественно, с гарантией. Звоните +79037258536, наверняка мы уже бурили рядом с вами!\n\nДля ознакомления с функционалом Telegram-бота нажмите /menu или выберите данную комаду в левом нижнем меню.')
+        await message.answer_photo(img, caption='Вас приветсвует буровая компания «САТУРИТ». Бурим более 18 лет. Более 2000 скважин в Московской области.\n\nПробурим для вас быстро, качественно, с гарантией. Звоните +79037258536, наверняка мы уже бурили рядом с вами!\n\nДля ознакомления с функционалом Telegram-бота нажмите /menu или выберите данную комаду в левом нижнем меню.')
 
 @dispatcher.message_handler(commands=["menu"])
 async def menu(message: Message, dialog_manager: DialogManager):
@@ -173,8 +173,8 @@ async def dialog_manager_done(dialog_manager: DialogManager, is_message=True):
 app_dialog = Dialog(
     Window(
         Const("Пожалуйста, выберите причину обращения к нам."),
-        Button(Const("🛠 Установка оборудования"), id="menu_0_1", on_click=start_survey),
-        Button(Const("🔧 Обслуживание оборудования"), id="menu_0_2", on_click=start_survey),
+        Button(Const("⛏ Бурение скважины"), id="menu_0_1", on_click=start_survey),
+        # Button(Const("🔧 Обслуживание оборудования"), id="menu_0_2", on_click=start_survey),
         Url(Const("📱 +7 (903) 725-85-36"), Const('https://t.me/+79037258536')),
         Button(Const("📲 Перезвоните мне"), id="menu_0_3", on_click=start_registration),
         Cancel(Const("🔚 Закрыть меню")),
@@ -200,7 +200,7 @@ app_dialog = Dialog(
         state=AppSG.installation_1,
     ),
     Window(
-        Const(QUESTIONS['installation_2'] + '\n\nУкажите местоположение точкой на карте, прикрепленной к сообщению. Для этого нажмите на булавку рядом с полем ввода и выберите геопозицию.'),
+        Const(QUESTIONS['installation_2'] + '\n\n' + QUESTIONS['installation_2_instruction']),
         MessageInput(installation_2, content_types=types.ContentTypes.LOCATION),
         Back(Const("🔙 Вернуться назад")),
         state=AppSG.installation_2,
