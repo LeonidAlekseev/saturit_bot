@@ -10,7 +10,6 @@ from aiogram_dialog.widgets.kbd import Url, Button, Back, SwitchTo, Cancel, Row
 from aiogram_dialog.widgets.text import Const, Format
 from aiogram_dialog.widgets.input import MessageInput
 from aiogram import types
-import os
 
 
 with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'parameters.json'), 'r', encoding='utf-8') as infile:
